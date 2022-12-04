@@ -18,7 +18,6 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
     
-    // Get Random Weather Endpoints
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
