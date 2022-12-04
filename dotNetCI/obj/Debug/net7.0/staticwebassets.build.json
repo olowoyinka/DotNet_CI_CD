@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "K9/qeiOOD0bSW9eunxTesdOQyPG2z6Cg9sMOCtjKD/k=",
+  "Source": "dotNetCI",
+  "BasePath": "_content/dotNetCI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
