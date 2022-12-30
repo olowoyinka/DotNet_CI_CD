@@ -2,7 +2,7 @@ name: deploy image docker hub
 
 on:
   push:
-    branches: none # [ master ]
+    branches: [ master ]
   pull_request:
     branches: none # [ master ]
   
