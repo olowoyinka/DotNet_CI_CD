@@ -1,10 +1,13 @@
-name: Develop Docker Hub CI
+name: deploy image docker hub
 
 on:
   push:
     branches: none # [ master ]
   pull_request:
     branches: none # [ master ]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
 
