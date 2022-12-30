@@ -1,0 +1,31 @@
+name: deploy image docker hub
+
+on:
+  push:
+    branches: none # [ master ]
+  pull_request:
+    branches: none # [ master ]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+    - name: Build the Docker image
+      working-directory: dotNetCI
+      run: docker build . --file Dockerfile --tag olowoyinka/webcicd:latest
+      
+    - name: Docker Push
+      run: docker push olowoyinka/webcicd
